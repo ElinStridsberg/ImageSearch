@@ -3,20 +3,24 @@ import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
 
 function App() {
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
 
   return (
     <div>
       {isAuthenticated ? (
         <>
+        <div className="LogOut">
+        <p className="WelcomeTxt">Welcome {user?.name} </p>
           <LogoutButton />
           {/* Inloggad */}
-        </>
+       </div> </>
       ) : (
         <>
+        <div className="Login">
+          <p className="loginTxt">Please log in..</p> {/* Text som visas när ej inloggad */}
           <LoginButton />
-          <p>Please log in</p> {/* Text som visas när ej inloggad */}
-        </>
+          
+       </div> </>
       )}
     </div>
   );
