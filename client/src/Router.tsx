@@ -1,16 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
-import { UserSite } from "./pages/UserSite";
-
+import { Favorites } from "./pages/Favorites";
 
 export const router = createBrowserRouter([
-    {
-          path: "/",
-          element: <Home />,
-          index: true
-        },
-        {
-          path: "/usersite",
-          element: <UserSite />,
-        }
-      ])
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/favorites",
+    element: <Favorites />
+  }
+]);
