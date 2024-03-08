@@ -13,7 +13,12 @@ function App() {
         <p className="WelcomeTxt">Welcome {user?.name} </p>
           <LogoutButton />
           {/* Inloggad */}
-       </div> </>
+       </div> 
+        <div className="Search">
+       <input type="text" placeholder="Type here.."/>
+       <button className="searchBtn">Search</button>
+       </div>
+       </>
       ) : (
         <>
         <div className="Login">
