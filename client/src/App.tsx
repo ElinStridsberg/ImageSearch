@@ -2,7 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
 import searchImg from "../src/images/search.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
