@@ -57,6 +57,8 @@ button{
 
 .Search{
   display: flex;
+  
+
 }
 input{
   width: 275px;
@@ -95,6 +97,18 @@ ul {
 li {
   background-color: blue;
 }
+h1{
+  text-align: center;
+}
+h5{
+  text-align: center;
+}
+.headline{
+display: flex;
+justify-content: center;
+}
+
+
 //   display: flex;
 //   flex-direction: column;
 // }
