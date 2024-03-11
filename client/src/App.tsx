@@ -7,19 +7,20 @@ import { useEffect, useState } from "react";
 function App() {
   const { isAuthenticated, user } = useAuth0();
   const [inputValue, setInputValue] = useState("");
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+
 
   const handleClick = async () => {
-    console.log("Klickat");
     const value = (document.getElementById("searchInput") as HTMLInputElement).value;
-    console.log(value);
     setInputValue(value);
 
-    // Gör API-anropet när användaren klickar på knappen
     if (value) {
       try {
         const response = await fetch  (`https://www.googleapis.com/customsearch/v1?key=AIzaSyCdN9XEZF0VFQhWMZUJvM--bxSH5M1hV5Q&cx=503e0f75223f949dc&num=10&searchType=image&q=${value}`);;
         const data = await response.json();
         console.log(data);
+        
+        setSearchResults(data.items); // Antag att resultatet är en array i data-objektet med namnet "items"
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -46,6 +47,17 @@ function App() {
           <div className="Search">
             <input type="text" placeholder="Type here.." id="searchInput"/>
             <button className="searchBtn" onClick={handleClick}>Search</button>
+          </div>
+          <div className="SearchResults">
+            <h2>Search Results</h2>
+            <h3>Din sökning tog sek</h3>
+            <ul>
+              {searchResults.map((item, index) => (
+                <li key={index}>
+                  <img src={item.link} alt={item.title} className="searchImgResults"/>
+                </li>
+              ))}
+            </ul>
           </div>
         </>
       ) : (
