@@ -5,7 +5,13 @@ import searchImg from "../src/images/search.png";
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
-
+  let inputValue = "";
+  const handleClick = () => {
+    console.log("Klickat");
+    inputValue = (document.getElementById("searchInput") as HTMLInputElement).value;
+    console.log(inputValue);
+  };
+  console.log(inputValue)
   return (
     <div>
       <div className="headline">
@@ -26,8 +32,8 @@ function App() {
             {/* <Link to="/favorites">My Favorites</Link> */}
           </div> 
           <div className="Search">
-            <input type="text" placeholder="Type here.."/>
-            <button className="searchBtn">Search</button>
+            <input type="text" placeholder="Type here.." id="searchInput"/>
+            <button className="searchBtn" onClick={handleClick}>Search</button>
           </div>
         </>
       ) : (
