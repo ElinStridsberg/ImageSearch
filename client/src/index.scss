@@ -16,8 +16,6 @@ body {
 
   justify-content: center;
   align-items: center;
- 
-
 }
 
 #root{
@@ -27,54 +25,21 @@ body {
 header {
   background-color: #333;
   color: #fff;
-  padding: 50px 20px;
+  padding: 40px 20px;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-
-
-
-
-// :root {
-//   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-//   line-height: 1.5;
-//   font-weight: 400;
-//   width: 1600px;
-
-
-//   color-scheme: light dark;
-//   color: rgba(255, 255, 255, 0.87);
-//   background-color: #242424;
-
-//   font-synthesis: none;
-//   text-rendering: optimizeLegibility;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
-
-// body {
-//   width: 70%;
-//   margin: 0 auto;
-//   display: flex;
-//   justify-content: center; /* Centrera horisontellt */
-//   align-items: center; /* Centrera vertikalt */
-//   min-height: 80vh;
-// }
-
-.menu{
+nav{
   display: flex;
-  p{
-    margin-right: 40px;
-    margin-left: 120px;
-    margin-top: 5px;
-    font-size: 35px;
-    color: white;
-  }
+  margin-right: 40px;
+  margin-left: 120px;
+  margin-top: 5px;
+  font-size: 35px;
+  color: white;
 }
-
+// 
 // .Login{
 //   display: flex;
 //   flex-direction: column;
@@ -95,50 +60,41 @@ header {
 //   display: flex;
 // }
 
-// nav{
-//   background-color: #242424;
-
+// .favorites-link {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   margin: 20px;
 // }
-
-// .header{
-//     position: relative;
-// }
-
-.favorites-link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 20px;
-}
 
 .favoritesImg{
-  height: 50px;
-  margin-top:0px;
-  margin-left: -20px;
-
+  height: 45px;
+  margin-top:-5px;
+  margin-left: 20px;
 }
 
-.LogOut{
-  display: flex;
-  flex-direction: row;
-}
-.WelcomeTxt {
-  display: flex;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 40px;
-  margin-right: 100px; /* Justera detta värde efter behov */
-  align-items: center; /* Centrera elementen vertikalt */
-  color: white;
-  font-size: 35px;
-}
 
-.userImg {
-  display: flex;
-  height: 50px;
-  margin-right: 10px; /* Justera detta värde för att skapa avstånd mellan texten och bilden */
-}
+// .WelcomeTxt {
+//   display: flex;
+//   align-items: center; /* Centrera vertikalt */
+// }
+
+// .LogOut {
+//   display: flex;
+//   align-items: center; /* Centrera vertikalt */
+// }
+
+// .logoutBtn {
+//   background-color: aquamarine;
+//   padding: 10px 20px; /* Justera knappens storlek efter behov */
+//   margin-left: 10px; /* Lägg till lite mellanrum mellan text och knapp */
+// }
+
+// .userImg {
+//   display: flex;
+//   height: 50px;
+//   margin-right: 10px; /* Justera detta värde för att skapa avstånd mellan texten och bilden */
+// }
 
 // .WelcomeTxt{
 //  margin-right: 30px;

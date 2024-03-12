@@ -37,21 +37,12 @@ function App() {
   
   return (
     <div>
-      {/* <div className="headline">
-        <h1>SEARCH</h1>   
-        <img 
-          src={searchImg} 
-          alt="search" 
-          className="searchImg"
-        />
-      </div> */}
-
       {isAuthenticated ? (
         <>
           <div className="LogOut">
-            <p className="WelcomeTxt">Welcome {user?.name} </p>  
+            <p className="WelcomeTxt">Welcome {user?.name} </p>   <LogoutButton />
             {/* <img src={userImage} alt="User" className="userImg"/> */}
-            <LogoutButton />
+           
           </div> 
           <div className="Search">
             <input type="text" placeholder="Type here.." id="searchInput"/>

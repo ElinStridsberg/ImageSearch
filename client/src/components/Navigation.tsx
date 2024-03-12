@@ -5,11 +5,11 @@ export const Navigation = () => {
   return (
     <nav>
       {/* Länk runt hjärtbilden */}
-      <NavLink to={"/favorites"}>
+        <p>Favorites</p>   
+        <NavLink to={"/favorites"}>
         <div className="menu">
-        <p>Favorites</p>
+       
         <img src={heartImage} alt="Favorites" className="favoritesImg"/>
-        
         </div>
       </NavLink>
     </nav>
