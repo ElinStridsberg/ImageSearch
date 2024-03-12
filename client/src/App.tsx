@@ -9,8 +9,8 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [searchInformation, setSearchInformation] = useState<SearchInformation | null>(null);
-  const [spelling, setSpelling] = useState<Spelling[] | null>(null);
-
+  const [spelling, setSpelling] = useState(null);
+  
 
   const handleClick = async () => {
     const value = (document.getElementById("searchInput") as HTMLInputElement).value;
@@ -20,13 +20,19 @@ function App() {
       try {
         const response = await fetch (`https://www.googleapis.com/customsearch/v1?key=AIzaSyCdN9XEZF0VFQhWMZUJvM--bxSH5M1hV5Q&cx=503e0f75223f949dc&num=10&searchType=image&q=${value}`);
         const data = await response.json();
-        console.log(data)
+        console.log(data.spelling.correctedQuery)
+        if (data.spelling && data.spelling.correctedQuery) {
+          setSpelling(data.spelling.correctedQuery);
+        } else {
+          setSpelling(null);
+        }
         setSearchResults(data.items); // Antag att resultatet är en array i data-objektet med namnet "items"
         setSearchInformation(data.searchInformation);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     }
+    
   };
   
   return (
@@ -50,19 +56,10 @@ function App() {
             <input type="text" placeholder="Type here.." id="searchInput"/>
             <button className="searchBtn" onClick={handleClick}>Search</button>
           </div>
-          <div className="SearchResults">
-        
-    	  {spelling && spelling.length > 0 && (
-  <h4>Menade du: {spelling[0].correctedQuery}</h4>
-)}
-
-        
-
-
-
-               <h5>Din sökning tog {searchInformation?.searchTime} sekunder</h5>
+            <div className="SearchResults">
+              {spelling && <h4>Did you mean: {spelling} ?</h4>}               
+               <h5>Youre search took{searchInformation?.searchTime} seconds.</h5>
                <h1>Search Results</h1>
-               <h4>{}</h4>
          
             <ul>
               {searchResults.map((item, index) => (
