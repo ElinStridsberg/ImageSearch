@@ -8,12 +8,12 @@ const LogoutButton = () => {
   return (
     <>
   
-        <img 
+        {/* <img 
           src={heartImage} 
           alt="like" 
           className="heartImg"
           
-        />
+        /> */}
  
       <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
         Log Out

@@ -2,7 +2,8 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  // min-width: 320px;
+  width: 1600px;
+
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -13,9 +14,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body {
 
-  width: 90%;
+body {
+  width: 70%;
   margin: 0 auto;
   display: flex;
   justify-content: center; /* Centrera horisontellt */
@@ -23,28 +24,59 @@ body {
   min-height: 80vh;
 }
 
+.menu{
+  display: flex;
+  p{
+    margin-right: 10px;
+    margin-left: 40px;
+    font-size: large;
+  }
+}
+
 .Login{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
-
   color: rgb(255, 255, 255);
 }
 
 .loginTxt{
 margin-bottom: 20px;
 }
+
 .LogOut {
   position: absolute;
   top: 0;
   right: 0;
   margin: 20px;
   display: flex;
+}
+
+nav{
+  background-color: #242424;
 
 }
 
+.header{
+    position: relative;
+}
 
+.favorites-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+}
+
+.favoritesImg{
+  height: 40px;
+  margin-top: 10px;
+  // display: flex;
+  // // margin: 0 auto;
+  // margin-left: 160px;
+  
+}
 .WelcomeTxt{
  margin-right: 30px;
  margin-top: 5px;
