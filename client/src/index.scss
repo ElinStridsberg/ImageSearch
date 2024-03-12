@@ -62,6 +62,36 @@ nav{
   align-items: center;
   padding: 6px;
 }
+.Search {
+  width: 50%;
+  display: flex;
+  margin:  0 auto;
+
+  justify-content: center; /* Centrera elementen horisontellt */
+  align-items: center; /* Centrera elementen vertikalt */
+  margin-top: 100px; /* Justera efter behov */
+}
+
+#searchInput {
+  margin-right: 40px; /* Justera avståndet mellan input-fältet och knappen */
+  padding: 8px; /* Justera kantavståndet för input-fältet */
+  width: 220px;
+}
+
+.searchBtn {
+  margin: 0;
+  padding: 8px 16px; /* Justera storleken på sökknappen */
+  background-color: #007bff; /* Justera bakgrundsfärgen för sökknappen */
+  color: #fff; /* Justera textfärgen för sökknappen */
+  border: none; /* Ta bort gränslinjen runt knappen */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Gör övergångseffekten för bakgrundsfärgen mjuk */
+}
+
+.searchBtn:hover {
+  background-color: #0056b3; /* Justera bakgrundsfärgen när musen svävar över knappen */
+}
+
 // 
 // .Login{
 //   display: flex;

@@ -40,14 +40,16 @@ function App() {
       {isAuthenticated ? (
         <>
           <div className="LogOut">
-            <p className="WelcomeTxt">Welcome {user?.name} </p>   <LogoutButton />
+            <p className="WelcomeTxt">Welcome {user?.name} </p>   
+            <LogoutButton />
             {/* <img src={userImage} alt="User" className="userImg"/> */}
-           
           </div> 
+
           <div className="Search">
             <input type="text" placeholder="Type here.." id="searchInput"/>
             <button className="searchBtn" onClick={handleClick}>Search</button>
           </div>
+
             <div className="SearchResults">
               {spelling && <h4>Did you mean: {spelling} ?</h4>}               
                <h5>Youre search took{searchInformation?.searchTime} seconds.</h5>
