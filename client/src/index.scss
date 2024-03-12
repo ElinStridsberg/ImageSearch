@@ -36,8 +36,31 @@ nav{
   margin-right: 40px;
   margin-left: 120px;
   margin-top: 5px;
-  font-size: 35px;
+  font-size: 20px;
   color: white;
+}
+
+.favoritesImg{
+  height: 35px;
+  margin-top:-8px;
+  margin-left: 15px;
+}
+
+.WelcomeTxt{
+  position: absolute;
+  top: 50px;
+  right: 170px;
+  font-size: 20px;
+  color: white;
+}
+
+.logoutBtn{
+  width: 120px;
+  position: absolute;
+  top: -255px;
+  right: 30px;
+  align-items: center;
+  padding: 6px;
 }
 // 
 // .Login{
@@ -67,11 +90,7 @@ nav{
 //   margin: 20px;
 // }
 
-.favoritesImg{
-  height: 45px;
-  margin-top:-5px;
-  margin-left: 20px;
-}
+
 
 
 // .WelcomeTxt {
