@@ -37,14 +37,14 @@ function App() {
   
   return (
     <div>
-      <div className="headline">
+      {/* <div className="headline">
         <h1>SEARCH</h1>   
         <img 
           src={searchImg} 
           alt="search" 
           className="searchImg"
         />
-      </div>
+      </div> */}
 
       {isAuthenticated ? (
         <>
@@ -72,10 +72,10 @@ function App() {
         </>
       ) : (
         <>
-          <div className="Login">
-            <p className="loginTxt">Please log in..</p>
+          {/* <div className="Login">
+            <p className="loginTxt">Please log in..</p> */}
             <LoginButton />
-          </div>
+          {/* </div> */}
         </>
       )}
     </div>
