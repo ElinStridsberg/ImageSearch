@@ -1,8 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
-import searchImg from "../src/images/search.png";
 import { useState } from "react";
+import heartImage from "../src/images/favorite.png";
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -37,25 +37,19 @@ function App() {
   
   return (
     <div>
-      <div className="headline">
-        <h1>SEARCH</h1>   
-        <img 
-          src={searchImg} 
-          alt="search" 
-          className="searchImg"
-        />
-      </div>
-
       {isAuthenticated ? (
         <>
           <div className="LogOut">
-            <p className="WelcomeTxt">Welcome {user?.name} </p>
+            <p className="WelcomeTxt">Welcome {user?.name} </p>   
             <LogoutButton />
+            {/* <img src={userImage} alt="User" className="userImg"/> */}
           </div> 
+
           <div className="Search">
             <input type="text" placeholder="Type here.." id="searchInput"/>
             <button className="searchBtn" onClick={handleClick}>Search</button>
           </div>
+
             <div className="SearchResults">
               {spelling && <h4>Did you mean: {spelling} ?</h4>}               
                <h5>Youre search took{searchInformation?.searchTime} seconds.</h5>
@@ -65,6 +59,7 @@ function App() {
               {searchResults.map((item, index) => (
                 <li key={index}>
                   <img src={item.link} alt={item.title} className="searchImgResults"/>
+                  <button className="add" >Add <img src={heartImage} className="heart"/></button>
                 </li>
               ))}
             </ul>
@@ -72,10 +67,10 @@ function App() {
         </>
       ) : (
         <>
-          <div className="Login">
-            <p className="loginTxt">Please log in..</p>
+          {/* <div className="Login">
+            <p className="loginTxt">Please log in..</p> */}
             <LoginButton />
-          </div>
+          {/* </div> */}
         </>
       )}
     </div>
