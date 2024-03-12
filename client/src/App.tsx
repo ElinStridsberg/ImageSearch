@@ -2,7 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
 import { useState } from "react";
-// import userImage from "../src/images/user.png"
+import heartImage from "../src/images/favorite.png";
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -59,6 +59,7 @@ function App() {
               {searchResults.map((item, index) => (
                 <li key={index}>
                   <img src={item.link} alt={item.title} className="searchImgResults"/>
+                  <button className="add" >Add <img src={heartImage} className="heart"/></button>
                 </li>
               ))}
             </ul>

@@ -106,6 +106,12 @@ nav{
 .searchImgResults {
   height: 175px;
   width: 175px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.searchImgResults:hover {
+  transform: scale(1.2); /* Förstorar bilden när musen svävar över den */
 }
 
 ul {
@@ -120,6 +126,23 @@ ul {
 
 li {
   margin-top: 30px;
+}
+
+.add{
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  background-color: #f0f0f0;
+  color:#333;
+  border: none;
+
+}
+.add:hover {
+  transform: scale(1.2); /* Förstorar bilden när musen svävar över den */
+}
+.heart{
+  height: 14px;
+  margin-left: 4px;
 }
 // 
 // .Login{
