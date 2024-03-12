@@ -1,66 +1,108 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  width: 1600px;
+/* styles.css */
 
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Återställ standardmarginaler och padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Grundläggande kroppsstilar */
 body {
-  width: 70%;
-  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  width: 100%;
   display: flex;
-  justify-content: center; /* Centrera horisontellt */
-  align-items: center; /* Centrera vertikalt */
-  min-height: 80vh;
+
+  justify-content: center;
+  align-items: center;
+ 
+
 }
+
+#root{
+  width: 100%;
+}
+/* Headerstilar */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+// :root {
+//   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+//   line-height: 1.5;
+//   font-weight: 400;
+//   width: 1600px;
+
+
+//   color-scheme: light dark;
+//   color: rgba(255, 255, 255, 0.87);
+//   background-color: #242424;
+
+//   font-synthesis: none;
+//   text-rendering: optimizeLegibility;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// body {
+//   width: 70%;
+//   margin: 0 auto;
+//   display: flex;
+//   justify-content: center; /* Centrera horisontellt */
+//   align-items: center; /* Centrera vertikalt */
+//   min-height: 80vh;
+// }
 
 .menu{
   display: flex;
   p{
-    margin-right: 10px;
-    margin-left: 40px;
-    font-size: large;
+    margin-right: 40px;
+    margin-left: 120px;
+    margin-top: 5px;
+    font-size: 35px;
+    color: white;
   }
 }
 
-.Login{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
-  color: rgb(255, 255, 255);
-}
+// .Login{
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin-top: 100px;
+//   color: rgb(255, 255, 255);
+// }
 
-.loginTxt{
-margin-bottom: 20px;
-}
+// .loginTxt{
+// margin-bottom: 20px;
+// }
 
-.LogOut {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 20px;
-  display: flex;
-}
+// .LogOut {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   margin: 20px;
+//   display: flex;
+// }
 
-nav{
-  background-color: #242424;
+// nav{
+//   background-color: #242424;
 
-}
+// }
 
-.header{
-    position: relative;
-}
+// .header{
+//     position: relative;
+// }
 
 .favorites-link {
   position: absolute;
@@ -70,131 +112,152 @@ nav{
 }
 
 .favoritesImg{
-  height: 40px;
-  margin-top: 10px;
-  // display: flex;
-  // // margin: 0 auto;
-  // margin-left: 160px;
-  
-}
-.WelcomeTxt{
- margin-right: 30px;
- margin-top: 5px;
+  height: 50px;
+  margin-top:0px;
+  margin-left: -20px;
 
-  
-}
-button{
-  margin-top: 0;
 }
 
-.Search{
+.LogOut{
   display: flex;
+  flex-direction: row;
+}
+.WelcomeTxt {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 40px;
+  margin-right: 100px; /* Justera detta värde efter behov */
+  align-items: center; /* Centrera elementen vertikalt */
+  color: white;
+  font-size: 35px;
+}
+
+.userImg {
+  display: flex;
+  height: 50px;
+  margin-right: 10px; /* Justera detta värde för att skapa avstånd mellan texten och bilden */
+}
+
+// .WelcomeTxt{
+//  margin-right: 30px;
+//  margin-top: 5px;
+
+  
+// }
+// button{
+//   margin-top: 0;
+// }
+
+// .Search{
+//   display: flex;
   
 
-}
-input{
-  width: 275px;
-  margin-right: 20px;
-}
+// }
+// input{
+//   width: 275px;
+//   margin-right: 20px;
+// }
 
-.heartImg{
-  height: 30px;
-  margin-right: 30px;
-}
-.headline{
-  margin-top: 80px;
-
-  display: flex;
-  font-size: 40px;
-}
-.searchImg{
-  height: 90px;
-  margin-left: 30px;
-  margin-top: 60px;
-}
-.searchImgResults {
-  height: 250px;
-  width: 250px;
-}
-
-ul {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Dela in i 5 kolumner */
-  gap: 10px; /* Avstånd mellan bilderna */
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-li {
-  background-color: blue;
-}
-h1{
-  text-align: center;
-}
-h5{
-  text-align: center;
-}
-.headline{
-display: flex;
-justify-content: center;
-}
-
+// .heartImg{
+//   height: 30px;
+//   margin-right: 30px;
+// }
+// .headline{
+//   margin-top: 80px;
 
 //   display: flex;
-//   flex-direction: column;
+//   font-size: 40px;
 // }
-// 
-// a {
-//   font-weight: 500;
-//   color: #646cff;
-//   text-decoration: inherit;
+// .searchImg{
+//   height: 90px;
+//   margin-left: 30px;
+//   margin-top: 60px;
 // }
-// a:hover {
-//   color: #535bf2;
+// .searchImgResults {
+//   height: 250px;
+//   width: 250px;
 // }
 
-// body {
+// ul {
+//   display: grid;
+//   grid-template-columns: repeat(5, 1fr); /* Dela in i 5 kolumner */
+//   gap: 10px; /* Avstånd mellan bilderna */
+//   padding: 0;
 //   margin: 0;
-//   display: flex;
-//   place-items: center;
-//   min-width: 320px;
-//   min-height: 100vh;
+//   list-style-type: none;
 // }
 
-// h1 {
-//   font-size: 3.2em;
-//   line-height: 1.1;
+// li {
+//   background-color: blue;
+// }
+// h1{
+//   text-align: center;
+// }
+// h5{
+//   text-align: center;
+// }
+// .headline{
+// display: flex;
+// justify-content: center;
 // }
 
-// button {
-//   border-radius: 8px;
-//   border: 1px solid transparent;
-//   padding: 0.6em 1.2em;
-//   font-size: 1em;
-//   font-weight: 500;
-//   font-family: inherit;
-//   background-color: #1a1a1a;
-//   cursor: pointer;
-//   transition: border-color 0.25s;
-// }
-// button:hover {
-//   border-color: #646cff;
-// }
-// button:focus,
-// button:focus-visible {
-//   outline: 4px auto -webkit-focus-ring-color;
-// }
 
-// @media (prefers-color-scheme: light) {
-//   :root {
-//     color: #213547;
-//     background-color: #ffffff;
-//   }
-//   a:hover {
-//     color: #747bff;
-//   }
-//   button {
-//     background-color: #f9f9f9;
-//   }
-// } 
+// //   display: flex;
+// //   flex-direction: column;
+// // }
+// // 
+// // a {
+// //   font-weight: 500;
+// //   color: #646cff;
+// //   text-decoration: inherit;
+// // }
+// // a:hover {
+// //   color: #535bf2;
+// // }
+
+// // body {
+// //   margin: 0;
+// //   display: flex;
+// //   place-items: center;
+// //   min-width: 320px;
+// //   min-height: 100vh;
+// // }
+
+// // h1 {
+// //   font-size: 3.2em;
+// //   line-height: 1.1;
+// // }
+
+// // button {
+// //   border-radius: 8px;
+// //   border: 1px solid transparent;
+// //   padding: 0.6em 1.2em;
+// //   font-size: 1em;
+// //   font-weight: 500;
+// //   font-family: inherit;
+// //   background-color: #1a1a1a;
+// //   cursor: pointer;
+// //   transition: border-color 0.25s;
+// // }
+// // button:hover {
+// //   border-color: #646cff;
+// // }
+// // button:focus,
+// // button:focus-visible {
+// //   outline: 4px auto -webkit-focus-ring-color;
+// // }
+
+// // @media (prefers-color-scheme: light) {
+// //   :root {
+// //     color: #213547;
+// //     background-color: #ffffff;
+// //   }
+// //   a:hover {
+// //     color: #747bff;
+// //   }
+// //   button {
+// //     background-color: #f9f9f9;
+// //   }
+// // } 

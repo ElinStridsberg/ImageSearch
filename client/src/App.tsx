@@ -1,8 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
-import searchImg from "../src/images/search.png";
 import { useState } from "react";
+// import userImage from "../src/images/user.png"
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -49,7 +49,8 @@ function App() {
       {isAuthenticated ? (
         <>
           <div className="LogOut">
-            <p className="WelcomeTxt">Welcome {user?.name} </p>
+            <p className="WelcomeTxt">Welcome {user?.name} </p>  
+            {/* <img src={userImage} alt="User" className="userImg"/> */}
             <LogoutButton />
           </div> 
           <div className="Search">

@@ -9,6 +9,7 @@ export const Navigation = () => {
         <div className="menu">
         <p>Favorites</p>
         <img src={heartImage} alt="Favorites" className="favoritesImg"/>
+        
         </div>
       </NavLink>
     </nav>
