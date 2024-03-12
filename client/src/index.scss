@@ -13,13 +13,14 @@ body {
   background-color: #f0f0f0;
   width: 100%;
   display: flex;
-
+  
   justify-content: center;
   align-items: center;
 }
 
 #root{
   width: 100%;
+  min-height: 900px;
 }
 /* Headerstilar */
 header {
@@ -92,6 +93,34 @@ nav{
   background-color: #0056b3; /* Justera bakgrundsfärgen när musen svävar över knappen */
 }
 
+.SearchResults{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin:  0 auto;
+  margin-top: 50px;
+
+  justify-content: center; /* Centrera elementen horisontellt */
+  align-items: center; /* Centrera elementen vertikalt */
+}
+.searchImgResults {
+  height: 175px;
+  width: 175px;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Dela in i 5 kolumner */
+  gap: 10px; /* Avstånd mellan bilderna */
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+li {
+  margin-top: 30px;
+}
 // 
 // .Login{
 //   display: flex;
