@@ -3,6 +3,8 @@ import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
 import { useState } from "react";
 import heartImage from "../src/images/favorite.png";
+import { Navigation } from "./components/Navigation";
+import { Layout } from "./pages/Layout";
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -20,6 +22,8 @@ function App() {
       try {
         const response = await fetch (`https://www.googleapis.com/customsearch/v1?key=AIzaSyCdN9XEZF0VFQhWMZUJvM--bxSH5M1hV5Q&cx=503e0f75223f949dc&num=10&searchType=image&q=${value}`);
         const data = await response.json();
+        console.log(data)
+     
         if (data.spelling && data.spelling.correctedQuery) {
           setSpelling(data.spelling.correctedQuery);
         } else {
@@ -28,10 +32,14 @@ function App() {
         
         setSearchResults(data.items);
         setSearchInformation(data.searchInformation);
+        setInputValue("");
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     }
+  };
+
+  const handleSpellingLinkClick = () => {
     
   };
   
@@ -50,20 +58,30 @@ function App() {
             <button className="searchBtn" onClick={handleClick}>Search</button>
           </div>
 
+          {searchResults.length > 0 && (
             <div className="SearchResults">
-              {spelling && <h4>Did you mean: {spelling} ?</h4>}               
-               <h5>Youre search took{searchInformation?.searchTime} seconds.</h5>
-               <h1>Search Results</h1>
+              {spelling && (
+                <h4>
+                  Did you mean:{" "}
+                  <a href="#" onClick={handleSpellingLinkClick}>
+                    {spelling}
+                  </a>{" "}
+                  ?
+                </h4>
+              )}               
+              <h5>Your search took {searchInformation?.searchTime} seconds.</h5>
+              <h1>Search Results</h1>
          
-            <ul>
-              {searchResults.map((item, index) => (
-                <li key={index}>
-                  <img src={item.link} alt={item.title} className="searchImgResults"/>
-                  <button className="add" >Add <img src={heartImage} className="heart"/></button>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <ul>
+                {searchResults.map((item, index) => (
+                  <li key={index}>
+                    <img src={item.link} alt={item.title} className="searchImgResults"/>
+                    <button className="add" >Add <img src={heartImage} className="heart"/></button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </>
       ) : (
         <>
