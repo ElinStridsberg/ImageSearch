@@ -58,7 +58,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 nav{
   display: flex;
@@ -148,6 +148,12 @@ nav{
 
 .searchImgResults:hover {
   transform: scale(1.2); 
+}
+
+.didYouMean{
+  color: blue;
+  font-style: italic;
+  margin-left: 2px;
 }
 
 ul {

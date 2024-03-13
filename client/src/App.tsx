@@ -66,14 +66,14 @@ function App() {
               {spelling && (
                 <h4>
                   Did you mean:{" "}
-                  <a href="#" onClick={handleSpellingLinkClick}>
+                  <a href="#" onClick={handleSpellingLinkClick} className="didYouMean">
                     {spelling}
                   </a>{" "}
                   ?
                 </h4>
               )}               
               <h5>Your search took {searchInformation?.searchTime} seconds.</h5>
-              <h1>Search Results</h1>
+          
          
               <ul>
                 {searchResults.map((item, index) => (
