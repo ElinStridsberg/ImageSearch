@@ -21,7 +21,6 @@ function App() {
       try {
         const response = await fetch (`https://www.googleapis.com/customsearch/v1?key=AIzaSyCdN9XEZF0VFQhWMZUJvM--bxSH5M1hV5Q&cx=503e0f75223f949dc&num=10&searchType=image&q=${value}`);
         const data = await response.json();
-        console.log(data)
      
         if (data.spelling && data.spelling.correctedQuery) {
           setSpelling(data.spelling.correctedQuery);
@@ -31,17 +30,21 @@ function App() {
         
         setSearchResults(data.items);
         setSearchInformation(data.searchInformation);
-        setInputValue("");
+        // setInputValue("");
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     }
   };
 
-  const handleSpellingLinkClick = () => {
-    
+  const handleSpellingLinkClick = (correctedQuery: string) => {
+    const inputField = document.getElementById("searchInput") as HTMLInputElement;
+    inputField.value = correctedQuery;
+    console.log(inputField.value); // Kontrollera att värdet har ändrats
   };
   
+  
+
   return (
     <div>
       {isAuthenticated ? (
@@ -63,15 +66,16 @@ function App() {
 
           {searchResults.length > 0 && (
             <div className="SearchResults">
-              {spelling && (
-                <h4>
-                  Did you mean:{" "}
-                  <a href="#" onClick={handleSpellingLinkClick} className="didYouMean">
-                    {spelling}
-                  </a>{" "}
-                  ?
-                </h4>
-              )}               
+  {spelling && (
+  <h4>
+    Did you mean:{" "}
+    <a href="#" onClick={() => handleSpellingLinkClick(spelling)} className="didYouMean">
+      {spelling}
+    </a>{" "}
+    ?
+  </h4>
+)}
+
               <h5>Your search took {searchInformation?.searchTime} seconds.</h5>
           
          
