@@ -3,8 +3,7 @@ import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
 import { useState } from "react";
 import heartImage from "../src/images/favorite.png";
-import { Navigation } from "./components/Navigation";
-import { Layout } from "./pages/Layout";
+import searchImg from "../src/images/search.png";
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -50,12 +49,16 @@ function App() {
           <div className="LogOut">
             <p className="WelcomeTxt">Welcome {user?.name} </p>   
             <LogoutButton />
-            {/* <img src={userImage} alt="User" className="userImg"/> */}
           </div> 
 
           <div className="Search">
             <input type="text" placeholder="Type here.." id="searchInput"/>
-            <button className="searchBtn" onClick={handleClick}>Search</button>
+            <img
+                src={searchImg}
+                alt="Search"
+                className="searchBtn"
+                onClick={handleClick}
+/>
           </div>
 
           {searchResults.length > 0 && (
@@ -85,10 +88,9 @@ function App() {
         </>
       ) : (
         <>
-          {/* <div className="Login">
-            <p className="loginTxt">Please log in..</p> */}
+  
             <LoginButton />
-          {/* </div> */}
+      
         </>
       )}
     </div>
