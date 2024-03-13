@@ -8,7 +8,7 @@ import { router } from './Router.tsx';
 
 ReactDOM.render(
   <React.StrictMode>
-        <RouterProvider router={router}></RouterProvider>
+        
     <Auth0Provider
       domain="dev-qf64t61vx0x6pt6f.us.auth0.com"
       clientId="OVpdUZAVMDPUYlwLJiuDMZynSnG75PGu"
@@ -16,6 +16,7 @@ ReactDOM.render(
         redirect_uri: window.location.origin
       }}
     >
+      <RouterProvider router={router}></RouterProvider>
         <App />
     </Auth0Provider>
   </React.StrictMode>,
