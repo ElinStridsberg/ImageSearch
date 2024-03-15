@@ -12,6 +12,7 @@ function App() {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [searchInformation, setSearchInformation] = useState<SearchInformation | null>(null);
   const [spelling, setSpelling] = useState(null);
+  const [userFavorites, setUserFavorites] = useState([]);
 
 
   const handleClick = async () => {

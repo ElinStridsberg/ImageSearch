@@ -1,5 +1,9 @@
 
 export const Favorites = () => {
     return<>
-    Favorites</>
+     <h1 className="FavoriteHeader">Favorites</h1>
+  <div className="Favorites">
+   
+    </div>
+    </>
 }
