@@ -67,7 +67,7 @@ function App() {
       {isAuthenticated ? (
         <>
           <div className="LogOut">
-            <p className="WelcomeTxt">Welcome {user?.name} </p>   
+            <p className="WelcomeTxt">Logged in as {user?.name} </p>   
             <LogoutButton />
           </div> 
 
