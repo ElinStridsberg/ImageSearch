@@ -18,14 +18,26 @@ export const Favorites = () => {
 
     fetchFavorites();
   }, []);
-
+{/* <ul>
+                {searchResults.map((item, index) => (
+                  <li key={index}>
+                    <img src={item.link} alt={item.title} className="searchImgResults"/>
+                    <button onClick={() => addToFavorites(item)} className="add">
+                          Add <img src={heartImage} className="heart" />
+                      </button>
+                  </li> */}
   return (
     <>
       <h1 className="FavoriteHeader">Favorites</h1>
       <div className="Favorites">
+    <ul>
         {favorites.map((favorite: { url: string | undefined; }, index: React.Key | null | undefined) => (
-          <img key={index} src={favorite.url} alt={`Favorite ${index}`} />
-        ))}
+         <li key={index}>
+         <img key={index} src={favorite.url} alt={`Favorite ${index}`} className='favoriteImg'/>
+         </li>
+   
+        ))} 
+        </ul>
       </div>
     </>
   );
