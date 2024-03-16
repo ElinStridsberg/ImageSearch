@@ -1,3 +1,7 @@
+// Variabler för färger
+$green: #4CAF50;
+$dark-green: #388E3C;
+
 
 * {
   margin: 0;
@@ -10,15 +14,15 @@ body {
   background-color: #f0f0f0;
   width: 100%;
   display: flex;
-  
   justify-content: center;
   align-items: center;
 }
 
 #root{
   width: 100%;
-  min-height: 900px;
+  min-height: 500px;
 }
+
 .loginBtn, .logoutBtn{
   padding: 10px 25px;
     margin-top: 0;
@@ -31,7 +35,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
-    background-color: #ff6f61;
+    background-color: #077723;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -49,38 +53,53 @@ body {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
   }
   
+.loginBtn{
+  display: flex;
+  align-items: center;
+  margin-top: 200px;
+}
 
 header {
-  background-color: #333;
-  color: black;
   padding: 50px 20px;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 150px;
+  
 }
+
 nav{
   display: flex;
   margin-right: 40px;
   margin-left: 20px;
   margin-top: 5px;
   font-size: 20px;
-  color: black;
 }
 
 .favoritesImg{
-  height: 35px;
-  margin-top:-8px;
-  margin-left: 15px;
+  height: 30px;
+  margin-top: -7px;
+  // margin-top:-8px;
+  // margin-left: 15px;
 }
 
+.menu{
+  position: absolute;
+  top: 45px;
+  color: black;
+a{
+  color: rgb(80, 79, 79);
+}}
+
 .WelcomeTxt{
+  font-family: "Prosto One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   position: absolute;
   top: 50px;
   right: 170px;
   font-size: 20px;
-  color: white;
+  color: rgb(80, 79, 79);
 }
 
 .logoutBtn{
@@ -106,6 +125,7 @@ nav{
   width: 70%;
   border-radius: 50px;
   padding: 20px 30px;
+  margin-top: 100px;
   font-size: 25px;
   border: none;
   transition: 0.2s;
@@ -121,6 +141,7 @@ nav{
   height: 55px;
   width: 55px;
   margin-left: 20px;
+  margin-top: 100px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -135,6 +156,7 @@ nav{
   flex-direction: column;
   margin:  0 auto;
   margin-top: 50px;
+  margin-bottom: 50px;
   justify-content: center; 
   align-items: center; 
 }
@@ -193,7 +215,41 @@ a{
   text-decoration: none;
   margin-left: 30px;
 }
+.Favorites{
+  font-family: "Prosto One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin:  0 auto;
+  margin-top: 200px;
+  margin-bottom: 30px;
+  justify-content: center; 
+  align-items: center;  
+  h1{
+    margin-bottom: 40px;
+    color: rgb(80, 79, 79);
+ 
+  }
+}
 
+.favoriteImg {
+  background-color: #ff6f61;
+  height: 150px;
+  width: 150px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin: 5px;
+}
+.favoriteImg:hover {
+  transform: scale(1.2); 
+}
+.FavoriteHeader{
+  text-align: center;
+  margin-top: -70px;
+}
 // // @media (prefers-color-scheme: light) {
 // //   :root {
 // //     color: #213547;

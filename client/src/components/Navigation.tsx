@@ -12,13 +12,14 @@ export const Navigation = () => {
 
   // Om användaren är inloggad visas navigeringen
   return (
-    <nav>
+   <div className="menu">  <nav>
       <NavLink to={"/favorites"}>
-        <div className="menu">
+       
           <img src={heartImage} alt="Favorites" className="favoritesImg" />
-        </div>
+       
       </NavLink>
       <NavLink to={"/"}><p>Start</p></NavLink>
-    </nav>
+ </nav>    
+ </div>
   );
 };
