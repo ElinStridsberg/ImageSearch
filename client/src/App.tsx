@@ -12,7 +12,6 @@ function App() {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [searchInformation, setSearchInformation] = useState<SearchInformation | null>(null);
   const [spelling, setSpelling] = useState(null);
-  const [userFavorites, setUserFavorites] = useState([]);
 
 
   const handleClick = async () => {
@@ -56,6 +55,7 @@ function App() {
         
         // Här kan du skicka med annan relevant information från item-objektet
       });
+
       // Här kan du göra något med svaret från servern om det behövs
     } catch (error) {
       console.error('Error adding to favorites:', error);
