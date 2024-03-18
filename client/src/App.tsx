@@ -4,6 +4,7 @@ import LogoutButton from "./components/LogoutButton";
 import { useState } from "react";
 import heartImage from "../src/images/favorite.png";
 import searchImg from "../src/images/search.png";
+import axios from "axios";
 
 function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -11,12 +12,12 @@ function App() {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [searchInformation, setSearchInformation] = useState<SearchInformation | null>(null);
   const [spelling, setSpelling] = useState(null);
-  
+
 
   const handleClick = async () => {
     const value = (document.getElementById("searchInput") as HTMLInputElement).value;
     setInputValue(value);
-
+    
     if (value) {
       try {
         const response = await fetch (`https://www.googleapis.com/customsearch/v1?key=AIzaSyDAngS3Wr9FYgpZuiJLbrFovQNh9Kta3Lk&cx=46a0161da9ab5490d&num=10&searchType=image&q=${value}`);
@@ -27,7 +28,6 @@ function App() {
         } else {
           setSpelling(null);
         }
-        
         setSearchResults(data.items);
         setSearchInformation(data.searchInformation);
         // setInputValue("");
@@ -40,17 +40,34 @@ function App() {
   const handleSpellingLinkClick = (correctedQuery: string) => {
     const inputField = document.getElementById("searchInput") as HTMLInputElement;
     inputField.value = correctedQuery;
-    console.log(inputField.value); // Kontrollera att värdet har ändrats
   };
   
-  
+  const addToFavorites = async (item: SearchResult) =>{
+    console.log('Lägg till i favoriter:', item);
+    console.log(item.title)
+    console.log(item.image.byteSize)
+    console.log(item.link)
+    try {
+      // Skicka en POST-förfrågan till din server med informationen från item-objektet
+        await axios.post('http://localhost:3000/api/addfavorites', {
+        user: user?.nickname,
+        image: item.link,
+        
+        // Här kan du skicka med annan relevant information från item-objektet
+      });
+
+      // Här kan du göra något med svaret från servern om det behövs
+    } catch (error) {
+      console.error('Error adding to favorites:', error);
+    }
+   }
 
   return (
     <div>
       {isAuthenticated ? (
         <>
           <div className="LogOut">
-            <p className="WelcomeTxt">Welcome {user?.name} </p>   
+            <p className="WelcomeTxt">Logged in as {user?.name} </p>   
             <LogoutButton />
           </div> 
 
@@ -66,24 +83,23 @@ function App() {
 
           {searchResults.length > 0 && (
             <div className="SearchResults">
-  {spelling && (
-  <h4>
-    Did you mean:{" "}
-    <a href="#" onClick={() => handleSpellingLinkClick(spelling)} className="didYouMean">
-      {spelling}
-    </a>{" "}
-    ?
-  </h4>
-)}
-
+        {spelling && (
+              <h4>
+                Did you mean:{" "}
+                <a href="#" onClick={() => handleSpellingLinkClick(spelling)} className="didYouMean">
+                  {spelling}
+                </a>{" "}
+                ?
+              </h4>
+            )}
               <h5>Your search took {searchInformation?.searchTime} seconds.</h5>
-          
-         
               <ul>
                 {searchResults.map((item, index) => (
                   <li key={index}>
                     <img src={item.link} alt={item.title} className="searchImgResults"/>
-                    <button className="add" >Add <img src={heartImage} className="heart"/></button>
+                    <button onClick={() => addToFavorites(item)} className="add">
+                          Add <img src={heartImage} className="heart" />
+                      </button>
                   </li>
                 ))}
               </ul>
@@ -92,9 +108,7 @@ function App() {
         </>
       ) : (
         <>
-  
             <LoginButton />
-      
         </>
       )}
     </div>
