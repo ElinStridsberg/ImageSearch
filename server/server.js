@@ -2,11 +2,17 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const fs = require('fs').promises;
+const imageSchema = require("./schemas/image.schema")
 
 app.use(express.json());
 app.use(cors());
 
 app.post('/api/addfavorites', async (req, res) => {
+    const { error, value } = imageSchema.validate(req.body)
+      console.log(error, value)
+      if (error) {
+        return res.status(400).json(error)
+      }
     const { image,  user } = req.body;
     console.log('Bild länk:', image);
     console.log(user)
@@ -37,6 +43,7 @@ app.post('/api/addfavorites', async (req, res) => {
         });
 
         app.get('/api/favorites/:user', async (req, res) => {
+          
             const user = req.params.user;
           
             try {
