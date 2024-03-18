@@ -9,14 +9,13 @@ app.use(cors());
 
 app.post('/api/addfavorites', async (req, res) => {
     const { error, value } = imageSchema.validate(req.body)
+    console.log(value)
       console.log(error, value)
       if (error) {
-        return res.status(400).json(error)
+      return res.status(400).json(error)
       }
+      
     const { image,  user } = req.body;
-    console.log('Bild länk:', image);
-    console.log(user)
-
     try {
         const fileName = "favorites.json";
         let favorites;
@@ -43,15 +42,12 @@ app.post('/api/addfavorites', async (req, res) => {
         });
 
         app.get('/api/favorites/:user', async (req, res) => {
-          
             const user = req.params.user;
-          
             try {
               const fileName = "favorites.json";
               const data = await fs.readFile(fileName, "utf-8");
               const favorites = JSON.parse(data);
           
-              // Hämta användarens sparade bilder från JSON-filen
               const userFavorites = favorites[user] || { favoriteImages: [] };
           
               res.status(200).json(userFavorites.favoriteImages);

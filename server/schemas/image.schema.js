@@ -1,7 +1,10 @@
 const Joi = require("joi");
 
 const imageSchema = Joi.object({
-    url: Joi.string().required()
+    user: Joi.string().required(),
+    image: Joi.string().uri().required()
+
 });
 
 module.exports = imageSchema;
+
