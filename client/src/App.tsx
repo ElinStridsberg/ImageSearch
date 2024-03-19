@@ -30,7 +30,6 @@ function App() {
         }
         setSearchResults(data.items);
         setSearchInformation(data.searchInformation);
-        // setInputValue("");
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -43,20 +42,17 @@ function App() {
   };
   
   const addToFavorites = async (item: SearchResult) =>{
-    console.log('Lägg till i favoriter:', item);
-    console.log(item.title)
-    console.log(item.image.byteSize)
-    console.log(item.link)
+    console.log('Added to favorites');
+    console.log("Title: " + item.title)
+    console.log("Bytesize: " + item.image.byteSize)
+    console.log("URL: " + item.link)
+
     try {
-      // Skicka en POST-förfrågan till din server med informationen från item-objektet
         await axios.post('http://localhost:3000/api/addfavorites', {
         user: user?.nickname,
         image: item.link,
-        
-        // Här kan du skicka med annan relevant information från item-objektet
       });
-
-      // Här kan du göra något med svaret från servern om det behövs
+      
     } catch (error) {
       console.error('Error adding to favorites:', error);
     }
