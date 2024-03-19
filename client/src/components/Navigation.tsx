@@ -5,12 +5,10 @@ import { NavLink } from "react-router-dom";
 export const Navigation = () => {
   const { isAuthenticated } = useAuth0();
 
-  // Om användaren inte är inloggad visas inte navigeringen
   if (!isAuthenticated) {
     return null;
   }
 
-  // Om användaren är inloggad visas navigeringen
   return (
    <div className="menu">  <nav>
       <NavLink to={"/favorites"}>
