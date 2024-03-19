@@ -20,7 +20,7 @@ function App() {
     
     if (value) {
       try {
-        const response = await fetch (`https://www.googleapis.com/customsearch/v1?key=AIzaSyDAngS3Wr9FYgpZuiJLbrFovQNh9Kta3Lk&cx=46a0161da9ab5490d&num=10&searchType=image&q=${value}`);
+        const response = await fetch (`https://www.googleapis.com/customsearch/v1?key=${import.meta.env.VITE_GOOGLE_API_KEY}&cx=${import.meta.env.VITE_SEARCH_ENGINE_ID}&num=10&searchType=image&q=${value}`);
         const data = await response.json();
      
         if (data.spelling && data.spelling.correctedQuery) {
